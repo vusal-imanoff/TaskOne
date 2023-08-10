@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 01
+      author: vusal
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: name
+                  type: varchar(250)
+                  constraints:
+                    nullable: false
+            tableName: categories
