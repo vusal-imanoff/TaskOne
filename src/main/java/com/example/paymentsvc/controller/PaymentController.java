@@ -1,41 +1,40 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.util.FeignService;
+import com.example.paymentsvc.service.impl.PayClientImpl;
+import com.example.paymentsvc.util.PayClient;
 import lombok.RequiredArgsConstructor;
-import org.apache.commons.collections4.Get;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("feign")
+@RequestMapping("payClient")
 public class PaymentController {
-    private final FeignService feignService;
+    private final PayClientImpl payClientImpl;
 
-    @GetMapping("payments")
+    @GetMapping
     public List<Object> getPayments()
     {
-        return feignService.getPayments();
+        return payClientImpl.getPayments();
     }
 
-    @GetMapping("/getDebt/{accountCode}")
+    @GetMapping("/{accountCode}")
     public ResponseEntity<Object> getDebtByAccountCode(@PathVariable Long accountCode)
     {
-        return feignService.getDebtByAccountCode(accountCode);
+        return payClientImpl.getDebtByAccountCode(accountCode);
     }
 
-    @PostMapping("")
+    @PostMapping
     public Long paymentRequest(@RequestBody Object object)
     {
-        return feignService.PaymentRequest(object);
+        return payClientImpl.PaymentRequest(object);
     }
 
-    @PatchMapping("/{id}")
+    @PostMapping("/{id}")
     public ResponseEntity<Object> paymentSubmit(@PathVariable Long id)
     {
-        return feignService.paymentSubmit(id);
+        return payClientImpl.paymentSubmit(id);
     }
 }

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 01
+      id: 02
       author: vusal
       changes:
         - createTable:
@@ -21,4 +21,7 @@ databaseChangeLog:
                   type: int
                   constraints:
                     nullable: false
-            tableName: mergents
+              - column:
+                  name: commission
+                  type: int
+            tableName: merchants

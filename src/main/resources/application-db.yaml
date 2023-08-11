@@ -17,4 +17,4 @@ spring:
 #      matching-strategy:ANT_PATH_MATCHER
 
 server:
-  port: 8081
+  port: 8082

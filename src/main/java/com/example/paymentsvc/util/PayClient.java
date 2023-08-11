@@ -5,10 +5,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Objects;
 
 @FeignClient(value = "feign",url = "http://localhost:8080/pay")
-public interface FeignService {
+public interface PayClient {
 
     @GetMapping("")
     List<Object> getPayments();
@@ -19,6 +18,6 @@ public interface FeignService {
     @PostMapping()
     Long PaymentRequest(@RequestBody Object object);
 
-    @PatchMapping("/{id}")
+    @PostMapping("/{id}")
     ResponseEntity<Object> paymentSubmit(@PathVariable Long id );
 }

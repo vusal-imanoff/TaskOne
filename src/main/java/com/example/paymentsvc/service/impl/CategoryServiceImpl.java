@@ -1,6 +1,7 @@
 package com.example.paymentsvc.service.impl;
 
-import com.example.paymentsvc.entity.Category;
+import com.example.paymentsvc.entity.CategoryEntity;
+import com.example.paymentsvc.exception.NotFoundException;
 import com.example.paymentsvc.repository.CategoryRepository;
 import com.example.paymentsvc.service.CategoryService;
 import lombok.RequiredArgsConstructor;
@@ -14,12 +15,12 @@ import java.util.Optional;
 public class CategoryServiceImpl implements CategoryService {
     private final CategoryRepository categoryRepository;
     @Override
-    public List<Category> getAll() {
+    public List<CategoryEntity> getAll() {
         return categoryRepository.findAll();
     }
 
     @Override
-    public Optional<Category> getCategory(Long id) {
-        return categoryRepository.findById(id);
+    public CategoryEntity getCategory(Long id) {
+        return categoryRepository.findById(id).orElseThrow(NotFoundException::new);
     }
 }

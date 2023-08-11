@@ -1,31 +1,30 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.entity.Category;
+import com.example.paymentsvc.entity.CategoryEntity;
 import com.example.paymentsvc.repository.CategoryRepository;
+import com.example.paymentsvc.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("categories")
 public class CategoryController {
-    private final CategoryRepository categoryRepository;
+    private final CategoryService categoryService;
 
-    @GetMapping()
-    public List<Category> getCategories()
-    {
-        return categoryRepository.findAll();
+    @GetMapping
+    public List<CategoryEntity> getCategories() {
+        return categoryService.getAll();
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Optional<Category>> getCategory(@PathVariable Long id)
-    {
-        Optional<Category> category = categoryRepository.findById(id);
+    public ResponseEntity<CategoryEntity> getCategory(@PathVariable Long id) {
+
+        CategoryEntity category = categoryService.getCategory(id);
         return new ResponseEntity<>(category, HttpStatus.OK);
     }
 }
