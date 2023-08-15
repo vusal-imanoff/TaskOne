@@ -1,8 +1,9 @@
-package com.example.paymentsvc.service.impl;
+package com.example.paymentsvc.client.impl;
 
-import com.example.paymentsvc.util.PayClient;
+import com.example.paymentsvc.client.PayClient;
+import com.example.paymentsvc.model.Debt;
+import com.example.paymentsvc.model.Payment;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -12,11 +13,11 @@ import java.util.List;
 @RequiredArgsConstructor
 public class PayClientImpl {
     private final PayClient payClient;
-    public List<Object> getPayments() {
+    public List<Payment> getPayments() {
         return payClient.getPayments();
     }
 
-    public ResponseEntity<Object> getDebtByAccountCode(Long accountCode) {
+    public Debt getDebtByAccountCode(Long accountCode) {
         return payClient.getDebtByAccountCode(accountCode);
     }
 
@@ -24,7 +25,7 @@ public class PayClientImpl {
         return payClient.PaymentRequest(object);
     }
 
-    public ResponseEntity<Object> paymentSubmit(Long id) {
-        return payClient.paymentSubmit(id);
+    public void paymentSubmit(Long id) {
+        payClient.paymentSubmit(id);
     }
 }

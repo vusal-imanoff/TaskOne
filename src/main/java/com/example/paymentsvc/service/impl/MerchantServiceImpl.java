@@ -1,6 +1,9 @@
 package com.example.paymentsvc.service.impl;
 
+import com.example.paymentsvc.dto.response.MerchantResponse;
 import com.example.paymentsvc.entity.MerchantEntity;
+import com.example.paymentsvc.exception.NotFoundException;
+import com.example.paymentsvc.mapper.MerchantMapper;
 import com.example.paymentsvc.repository.MerchantRepository;
 import com.example.paymentsvc.service.MerchantService;
 import lombok.RequiredArgsConstructor;
@@ -11,14 +14,23 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class MerchantServiceImpl implements MerchantService {
-    private final MerchantRepository mergentRepository;
+
+    private final MerchantRepository merchantRepository;
+    private final MerchantMapper merchantMapper;
     @Override
-    public List<MerchantEntity> getAll() {
-        return mergentRepository.findAll();
+    public List<MerchantResponse> getAll() {
+        return merchantMapper.modelsToDTOs(merchantRepository.findAll());
     }
 
     @Override
-    public List<MerchantEntity> getAllByCategoryId(Long id) {
-        return mergentRepository.findAllByCategoryId(id);
+    public List<MerchantResponse> getAllByCategoryId(Long id) {
+        List<MerchantResponse> merchantResponses =
+                merchantMapper.modelsToDTOs(merchantRepository.findAllByCategoryId(id));
+
+        if (merchantResponses.isEmpty())
+        {
+            throw new NotFoundException("Merchants are not found");
+        }
+        return merchantResponses;
     }
 }

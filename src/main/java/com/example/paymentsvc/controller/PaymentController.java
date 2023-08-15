@@ -1,9 +1,9 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.service.impl.PayClientImpl;
-import com.example.paymentsvc.util.PayClient;
+import com.example.paymentsvc.model.Debt;
+import com.example.paymentsvc.model.Payment;
+import com.example.paymentsvc.client.impl.PayClientImpl;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,29 +12,27 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("payClient")
 public class PaymentController {
+
     private final PayClientImpl payClientImpl;
 
     @GetMapping
-    public List<Object> getPayments()
+    public List<Payment> getPayments()
     {
         return payClientImpl.getPayments();
     }
 
     @GetMapping("/{accountCode}")
-    public ResponseEntity<Object> getDebtByAccountCode(@PathVariable Long accountCode)
-    {
+    public Debt getDebtByAccountCode(@PathVariable Long accountCode) {
         return payClientImpl.getDebtByAccountCode(accountCode);
     }
 
     @PostMapping
-    public Long paymentRequest(@RequestBody Object object)
-    {
+    public Long paymentRequest(@RequestBody Object object) {
         return payClientImpl.PaymentRequest(object);
     }
 
     @PostMapping("/{id}")
-    public ResponseEntity<Object> paymentSubmit(@PathVariable Long id)
-    {
-        return payClientImpl.paymentSubmit(id);
+    public void paymentSubmit(@PathVariable Long id) {
+        payClientImpl.paymentSubmit(id);
     }
 }

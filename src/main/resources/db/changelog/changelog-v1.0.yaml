@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 01
+      id: 06
       author: vusal
       changes:
         - createTable:

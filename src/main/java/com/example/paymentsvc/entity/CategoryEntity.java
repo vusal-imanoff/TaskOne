@@ -15,10 +15,8 @@ public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
-
     @OneToMany(mappedBy = "category")
     @JsonIgnore
-    private Set<MerchantEntity> mergents;
+    private Set<MerchantEntity> merchant;
 }

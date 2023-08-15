@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 09
+      author: vusal
+      changes:
+        - dropColumn:
+            columns:
+              - column:
+                  name: idempotency
+                  type: varchar(250)
+            tableName: merchants

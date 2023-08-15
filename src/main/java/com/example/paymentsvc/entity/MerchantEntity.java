@@ -13,11 +13,8 @@ public class MerchantEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
-
     public String name;
-
     public Integer commission;
-
     @ManyToOne
     @JoinColumn(name="category_id", nullable=false)
     private CategoryEntity category;
