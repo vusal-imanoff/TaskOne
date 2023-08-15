@@ -1,9 +1,12 @@
 package com.example.paymentsvc.controller;
 
 import com.example.paymentsvc.model.response.MerchantResponse;
-import com.example.paymentsvc.service.impl.MerchantServiceImpl;
+import com.example.paymentsvc.service.MerchantService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -12,7 +15,7 @@ import java.util.List;
 @RequestMapping("v1/erchants")
 public class MerchantController {
 
-    private final MerchantServiceImpl merchantService;
+    private final MerchantService merchantService;
 
     @GetMapping
     public List<MerchantResponse> getAll() {

@@ -20,8 +20,8 @@ public interface PayClient {
     DebtDto getDebtByAccountCode(@PathVariable Long accountCode);
 
     @PostMapping
-    Long paymentRequest(@RequestBody PaymentDto payment);
+    Long requestPayment(@RequestBody PaymentDto payment);
 
     @PostMapping("/{id}")
-    void paymentSubmit(@PathVariable Long id);
+    void submitPayment(@PathVariable Long id);
 }

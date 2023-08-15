@@ -10,7 +10,7 @@ public interface PaymentService {
 
     DebtDto getDebtByAccountCode(Long accountCode);
 
-    Long paymentRequest(PaymentDto payment);
+    Long requestPayment(PaymentDto payment);
 
-    void paymentSubmit(Long id);
+    void submitPayment(Long id);
 }

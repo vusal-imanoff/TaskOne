@@ -23,11 +23,11 @@ public class PaymentServiceImpl implements PaymentService {
         return payClient.getDebtByAccountCode(accountCode);
     }
 
-    public Long paymentRequest(PaymentDto payment) {
-        return payClient.paymentRequest(payment);
+    public Long requestPayment(PaymentDto payment) {
+        return payClient.requestPayment(payment);
     }
 
-    public void paymentSubmit(Long id) {
-        payClient.paymentSubmit(id);
+    public void submitPayment(Long id) {
+        payClient.submitPayment(id);
     }
 }

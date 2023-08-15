@@ -2,7 +2,7 @@ package com.example.paymentsvc.controller;
 
 import com.example.paymentsvc.model.dto.DebtDto;
 import com.example.paymentsvc.model.dto.PaymentDto;
-import com.example.paymentsvc.service.impl.PaymentServiceImpl;
+import com.example.paymentsvc.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,11 +13,10 @@ import java.util.List;
 @RequestMapping("v1/payClient")
 public class PaymentController {
 
-    private final PaymentServiceImpl payClientImpl;
+    private final PaymentService payClientImpl;
 
     @GetMapping
-    public List<PaymentDto> getPayments()
-    {
+    public List<PaymentDto> getPayments() {
         return payClientImpl.getPayments();
     }
 
@@ -27,12 +26,12 @@ public class PaymentController {
     }
 
     @PostMapping
-    public Long paymentRequest(@RequestBody PaymentDto payment) {
-        return payClientImpl.paymentRequest(payment);
+    public Long requestPayment(@RequestBody PaymentDto payment) {
+        return payClientImpl.requestPayment(payment);
     }
 
     @PostMapping("/{id}")
-    public void paymentSubmit(@PathVariable Long id) {
-        payClientImpl.paymentSubmit(id);
+    public void submitPayment(@PathVariable Long id) {
+        payClientImpl.submitPayment(id);
     }
 }
