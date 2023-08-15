@@ -11,13 +11,13 @@ import org.springframework.context.annotation.Bean;
 
 public class PaymentSvcApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PaymentSvcApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PaymentSvcApplication.class, args);
+    }
 
-	@Bean
-	public OkHttpClient okHttpClient() {
-		return new OkHttpClient();
-	}
+    @Bean
+    public OkHttpClient okHttpClient() {
+        return new OkHttpClient();
+    }
 
 }

@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 06
+      id: 03
       author: vusal
       changes:
         - createTable:
@@ -16,4 +16,4 @@ databaseChangeLog:
                   type: varchar(250)
                   constraints:
                     nullable: false
-            tableName: categories
+            tableName: CATEGORIES

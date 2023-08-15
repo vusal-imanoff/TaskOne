@@ -1,8 +1,8 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.model.Debt;
-import com.example.paymentsvc.model.Payment;
-import com.example.paymentsvc.client.impl.PayClientImpl;
+import com.example.paymentsvc.model.DebtDto;
+import com.example.paymentsvc.model.PaymentDto;
+import com.example.paymentsvc.service.impl.PaymentServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,22 +13,22 @@ import java.util.List;
 @RequestMapping("payClient")
 public class PaymentController {
 
-    private final PayClientImpl payClientImpl;
+    private final PaymentServiceImpl payClientImpl;
 
     @GetMapping
-    public List<Payment> getPayments()
+    public List<PaymentDto> getPayments()
     {
         return payClientImpl.getPayments();
     }
 
     @GetMapping("/{accountCode}")
-    public Debt getDebtByAccountCode(@PathVariable Long accountCode) {
+    public DebtDto getDebtByAccountCode(@PathVariable Long accountCode) {
         return payClientImpl.getDebtByAccountCode(accountCode);
     }
 
     @PostMapping
-    public Long paymentRequest(@RequestBody Object object) {
-        return payClientImpl.PaymentRequest(object);
+    public Long paymentRequest(@RequestBody PaymentDto payment) {
+        return payClientImpl.paymentRequest(payment);
     }
 
     @PostMapping("/{id}")

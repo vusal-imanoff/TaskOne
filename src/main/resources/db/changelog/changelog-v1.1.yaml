@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: 07
+      id: 04
       author: vusal
       changes:
         - createTable:
@@ -24,4 +24,4 @@ databaseChangeLog:
               - column:
                   name: commission
                   type: int
-            tableName: merchants
+            tableName: MERCHANTS

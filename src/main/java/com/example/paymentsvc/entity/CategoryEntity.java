@@ -10,12 +10,14 @@ import java.util.Set;
 @Getter
 @Setter
 @Entity
-@Table(name = "categories")
+@Table(name = "CATEGORIES")
 public class CategoryEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     private String name;
+
     @OneToMany(mappedBy = "category")
     @JsonIgnore
     private Set<MerchantEntity> merchant;

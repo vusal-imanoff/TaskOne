@@ -8,15 +8,18 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "merchants")
+@Table(name = "MERCHANTS")
 public class MerchantEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
+
     public String name;
+
     public Integer commission;
+
     @ManyToOne
-    @JoinColumn(name="category_id", nullable=false)
+    @JoinColumn(name = "category_id", nullable = false)
     private CategoryEntity category;
 
 }

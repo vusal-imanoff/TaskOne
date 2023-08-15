@@ -1,15 +1,16 @@
 package com.example.paymentsvc.mapper;
 
-import com.example.paymentsvc.dto.response.CategoryResponse;
 import com.example.paymentsvc.dto.response.MerchantResponse;
-import com.example.paymentsvc.entity.CategoryEntity;
 import com.example.paymentsvc.entity.MerchantEntity;
 import org.mapstruct.Mapper;
-import org.mapstruct.ReportingPolicy;
+import org.mapstruct.Mapping;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+import static org.mapstruct.ReportingPolicy.IGNORE;
+
+@Mapper(componentModel = "spring", unmappedTargetPolicy = IGNORE)
 public interface MerchantMapper {
+    @Mapping(target = "categoryId", source = "category.id")
     List<MerchantResponse> modelsToDTOs(List<MerchantEntity> merchantEntities);
 }
