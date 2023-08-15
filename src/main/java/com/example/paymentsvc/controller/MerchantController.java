@@ -1,8 +1,6 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.dto.response.MerchantResponse;
-import com.example.paymentsvc.entity.MerchantEntity;
-import com.example.paymentsvc.service.MerchantService;
+import com.example.paymentsvc.model.response.MerchantResponse;
 import com.example.paymentsvc.service.impl.MerchantServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("merchants")
+@RequestMapping("v1/erchants")
 public class MerchantController {
 
     private final MerchantServiceImpl merchantService;

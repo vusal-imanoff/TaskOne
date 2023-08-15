@@ -1,7 +1,7 @@
 package com.example.paymentsvc.client;
 
-import com.example.paymentsvc.model.DebtDto;
-import com.example.paymentsvc.model.PaymentDto;
+import com.example.paymentsvc.model.dto.DebtDto;
+import com.example.paymentsvc.model.dto.PaymentDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

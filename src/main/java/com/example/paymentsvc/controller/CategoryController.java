@@ -1,6 +1,6 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.dto.response.CategoryResponse;
+import com.example.paymentsvc.model.response.CategoryResponse;
 import com.example.paymentsvc.service.CategoryService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("categories")
+@RequestMapping("v1/categories")
 public class CategoryController {
 
     private final CategoryService categoryService;

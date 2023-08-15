@@ -1,6 +1,6 @@
 package com.example.paymentsvc.service;
 
-import com.example.paymentsvc.dto.response.MerchantResponse;
+import com.example.paymentsvc.model.response.MerchantResponse;
 
 import java.util.List;
 

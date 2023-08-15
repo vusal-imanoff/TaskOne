@@ -1,4 +1,4 @@
-package com.example.paymentsvc.dto.response;
+package com.example.paymentsvc.model.response;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,8 +7,8 @@ import lombok.Setter;
 @Setter
 public class MerchantResponse {
 
-    public Long id;
-    public String name;
-    public Integer commission;
+    private Long id;
+    private String name;
+    private Integer commission;
     private Long categoryId;
 }

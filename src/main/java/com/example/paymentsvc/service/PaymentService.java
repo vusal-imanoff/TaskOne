@@ -1,7 +1,7 @@
 package com.example.paymentsvc.service;
 
-import com.example.paymentsvc.model.DebtDto;
-import com.example.paymentsvc.model.PaymentDto;
+import com.example.paymentsvc.model.dto.DebtDto;
+import com.example.paymentsvc.model.dto.PaymentDto;
 
 import java.util.List;
 

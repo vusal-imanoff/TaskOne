@@ -1,7 +1,7 @@
 package com.example.paymentsvc.controller;
 
-import com.example.paymentsvc.model.DebtDto;
-import com.example.paymentsvc.model.PaymentDto;
+import com.example.paymentsvc.model.dto.DebtDto;
+import com.example.paymentsvc.model.dto.PaymentDto;
 import com.example.paymentsvc.service.impl.PaymentServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("payClient")
+@RequestMapping("v1/payClient")
 public class PaymentController {
 
     private final PaymentServiceImpl payClientImpl;

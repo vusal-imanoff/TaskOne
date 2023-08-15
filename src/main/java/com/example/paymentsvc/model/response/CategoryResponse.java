@@ -1,4 +1,4 @@
-package com.example.paymentsvc.dto.response;
+package com.example.paymentsvc.model.response;
 
 import com.example.paymentsvc.entity.MerchantEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;

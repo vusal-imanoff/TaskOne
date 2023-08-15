@@ -1,6 +1,6 @@
 package com.example.paymentsvc.service.impl;
 
-import com.example.paymentsvc.dto.response.MerchantResponse;
+import com.example.paymentsvc.model.response.MerchantResponse;
 import com.example.paymentsvc.exception.NotFoundException;
 import com.example.paymentsvc.mapper.MerchantMapper;
 import com.example.paymentsvc.repository.MerchantRepository;

@@ -1,6 +1,6 @@
 package com.example.paymentsvc.service;
 
-import com.example.paymentsvc.dto.response.CategoryResponse;
+import com.example.paymentsvc.model.response.CategoryResponse;
 
 import java.util.List;
 

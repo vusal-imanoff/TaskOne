@@ -1,6 +1,6 @@
 package com.example.paymentsvc.mapper;
 
-import com.example.paymentsvc.dto.response.MerchantResponse;
+import com.example.paymentsvc.model.response.MerchantResponse;
 import com.example.paymentsvc.entity.MerchantEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

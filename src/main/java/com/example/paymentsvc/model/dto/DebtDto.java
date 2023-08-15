@@ -1,4 +1,4 @@
-package com.example.paymentsvc.model;
+package com.example.paymentsvc.model.dto;
 
 import lombok.Getter;
 import lombok.Setter;

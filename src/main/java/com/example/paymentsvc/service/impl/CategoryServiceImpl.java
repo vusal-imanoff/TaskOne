@@ -1,6 +1,6 @@
 package com.example.paymentsvc.service.impl;
 
-import com.example.paymentsvc.dto.response.CategoryResponse;
+import com.example.paymentsvc.model.response.CategoryResponse;
 import com.example.paymentsvc.exception.NotFoundException;
 import com.example.paymentsvc.mapper.CategoryMapper;
 import com.example.paymentsvc.repository.CategoryRepository;
@@ -26,7 +26,7 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public CategoryResponse getCategory(Long id) {
         return categoryRepository.findById(id)
-                .map(category -> categoryMapper.modelToDTO(category))
+                .map(categoryMapper::modelToDTO)
                 .orElseThrow(() -> new NotFoundException("Category is not found"));
 
     }

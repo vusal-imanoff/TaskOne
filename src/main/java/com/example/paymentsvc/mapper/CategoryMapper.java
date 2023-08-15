@@ -1,6 +1,6 @@
 package com.example.paymentsvc.mapper;
 
-import com.example.paymentsvc.dto.response.CategoryResponse;
+import com.example.paymentsvc.model.response.CategoryResponse;
 import com.example.paymentsvc.entity.CategoryEntity;
 import org.mapstruct.Mapper;
 

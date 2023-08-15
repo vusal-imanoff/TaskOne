@@ -1,8 +1,8 @@
 package com.example.paymentsvc.service.impl;
 
 import com.example.paymentsvc.client.PayClient;
-import com.example.paymentsvc.model.DebtDto;
-import com.example.paymentsvc.model.PaymentDto;
+import com.example.paymentsvc.model.dto.DebtDto;
+import com.example.paymentsvc.model.dto.PaymentDto;
 import com.example.paymentsvc.service.PaymentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
