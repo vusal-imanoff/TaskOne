@@ -1,0 +1,23 @@
+databaseChangeLog:
+  - changeSet:
+      id: 05
+      author: vusal
+      changes:
+        - insert:
+            tableName: CATEGORIES
+            columns:
+              - column:
+                  name: name
+                  value: "Mobile"
+        - insert:
+            tableName: CATEGORIES
+            columns:
+              - column:
+                  name: name
+                  value: "Governments"
+        - insert:
+            tableName: CATEGORIES
+            columns:
+              - column:
+                  name: name
+                  value: "Internet"

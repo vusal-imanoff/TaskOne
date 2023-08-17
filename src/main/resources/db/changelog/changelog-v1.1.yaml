@@ -23,5 +23,5 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: commission
-                  type: int
+                  type: NUMBER(4,2)
             tableName: MERCHANTS

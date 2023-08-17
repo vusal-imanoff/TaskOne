@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: 06
+      author: vusal
+      changes:
+        - insert:
+            tableName: MERCHANTS
+            columns:
+              - column:
+                  name: name
+                  value: "BakCell"
+              - column:
+                  name: category_id
+                  value: 5
+              - column:
+                  name: commission
+                  value: 0.25
+        - insert:
+            tableName: MERCHANTS
+            columns:
+              - column:
+                  name: name
+                  value: "Azercell"
+              - column:
+                  name: category_id
+                  value: 5
+              - column:
+                  name: commission
+                  value: 0.25
+        - insert:
+            tableName: MERCHANTS
+            columns:
+              - column:
+                  name: name
+                  value: "DYP"
+              - column:
+                  name: category_id
+                  value: 6
+              - column:
+                  name: commission
+                  value: 0.5
+        - insert:
+            tableName: MERCHANTS
+            columns:
+              - column:
+                  name: name
+                  value: "CityNet"
+              - column:
+                  name: category_id
+                  value: 7
+              - column:
+                  name: commission
+                  value: 0.75
+        - insert:
+            tableName: MERCHANTS
+            columns:
+              - column:
+                  name: name
+                  value: "Baktelecom"
+              - column:
+                  name: category_id
+                  value: 7
+              - column:
+                  name: commission
+                  value: 0.75

@@ -5,6 +5,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Entity
@@ -16,7 +18,7 @@ public class MerchantEntity {
 
     public String name;
 
-    public Integer commission;
+    public BigDecimal commission;
 
     @ManyToOne
     @JoinColumn(name = "category_id", nullable = false)
