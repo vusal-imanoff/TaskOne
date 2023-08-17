@@ -12,7 +12,7 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("v1/erchants")
+@RequestMapping("v1/merchants")
 public class MerchantController {
 
     private final MerchantService merchantService;
@@ -23,7 +23,7 @@ public class MerchantController {
     }
 
     @GetMapping("/{id}")
-    public List<MerchantResponse> getMerchantByCategoryId(@PathVariable Long id) {
-        return merchantService.getAllByCategoryId(id);
+    public List<MerchantResponse> getMerchantsByCategoryId(@PathVariable Long id) {
+        return merchantService.getMerchantsByCategoryId(id);
     }
 }

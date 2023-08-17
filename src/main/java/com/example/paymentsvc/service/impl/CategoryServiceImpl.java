@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+import static com.example.paymentsvc.model.constant.ErrorMessages.categoryNotFoundMessage;
+
 @Service
 @RequiredArgsConstructor
 public class CategoryServiceImpl implements CategoryService {
@@ -27,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
     public CategoryResponse getCategory(Long id) {
         return categoryRepository.findById(id)
                 .map(categoryMapper::modelToDTO)
-                .orElseThrow(() -> new NotFoundException("Category is not found"));
+                .orElseThrow(() -> new NotFoundException(categoryNotFoundMessage));
 
     }
 }

@@ -7,5 +7,5 @@ import java.util.List;
 public interface MerchantService {
     List<MerchantResponse> getAll();
 
-    List<MerchantResponse> getAllByCategoryId(Long id);
+    List<MerchantResponse> getMerchantsByCategoryId(Long id);
 }

@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
+import static com.example.paymentsvc.model.constant.ErrorMessages.merchantNotFoundMessage;
 
 @Service
 @RequiredArgsConstructor
@@ -19,15 +22,22 @@ public class MerchantServiceImpl implements MerchantService {
 
     @Override
     public List<MerchantResponse> getAll() {
-        return merchantMapper.modelsToDTOs(merchantRepository.findAll());
+       return merchantRepository.findAll()
+                .stream()
+                .map(merchantMapper::modelToDTO)
+                .collect(Collectors.toList());
     }
 
     @Override
-    public List<MerchantResponse> getAllByCategoryId(Long id) {
-        List<MerchantResponse> merchantResponses = merchantMapper.modelsToDTOs(merchantRepository.findAllByCategoryId(id));
+    public List<MerchantResponse> getMerchantsByCategoryId(Long id) {
+        List<MerchantResponse> merchantResponses =
+                merchantRepository.findAllByCategoryId(id)
+                        .stream()
+                        .map(merchantMapper::modelToDTO)
+                        .collect(Collectors.toList());
 
         if (merchantResponses.isEmpty()) {
-            throw new NotFoundException("Merchants are not found");
+            throw new NotFoundException(merchantNotFoundMessage);
         }
         return merchantResponses;
     }

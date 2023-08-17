@@ -12,5 +12,5 @@ import static org.mapstruct.ReportingPolicy.IGNORE;
 @Mapper(componentModel = "spring", unmappedTargetPolicy = IGNORE)
 public interface MerchantMapper {
     @Mapping(target = "categoryId", source = "category.id")
-    List<MerchantResponse> modelsToDTOs(List<MerchantEntity> merchantEntities);
+    MerchantResponse modelToDTO(MerchantEntity merchantEntity);
 }
